@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Tarot Awakening Workshop — Coach Shivangi Kaur</title>
+  <meta name="description" content="Free live online workshop on Tarot, Energy Healing & Manifestation with Coach Shivangi Kaur. Join us Saturday, July 5, 2025 at 7 PM IST." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:        #120826;
+      --bg2:       #1a0e35;
+      --violet:    #8b5cf6;
+      --indigo:    #6366f1;
+      --purple:    #c084fc;
+      --gold:      #f0b429;
+      --gold-lt:   #fde68a;
+      --rose:      #e879f9;
+      --white:     #f0ecff;
+      --muted:     #c4b8e8;
+      --glass:     rgba(139,92,246,0.14);
+      --glass-border: rgba(192,132,252,0.30);
+      --card-bg:   rgba(30,15,60,0.75);
+      --radius:    16px;
+      --radius-lg: 24px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    section { position: relative; }
+
+    /* ─── COSMIC BACKGROUND ────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: -2;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 10%, rgba(139,92,246,0.28) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(99,102,241,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 40%, rgba(192,132,252,0.14) 0%, transparent 70%),
+        var(--bg);
+    }
+    /* Star particles via SVG data URI */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Ccircle cx='50' cy='80' r='1' fill='white' opacity='.4'/%3E%3Ccircle cx='150' cy='200' r='1.5' fill='white' opacity='.3'/%3E%3Ccircle cx='300' cy='50' r='1' fill='white' opacity='.5'/%3E%3Ccircle cx='450' cy='150' r='1' fill='white' opacity='.3'/%3E%3Ccircle cx='500' cy='300' r='1.5' fill='white' opacity='.4'/%3E%3Ccircle cx='80' cy='400' r='1' fill='white' opacity='.35'/%3E%3Ccircle cx='220' cy='500' r='1' fill='white' opacity='.3'/%3E%3Ccircle cx='380' cy='420' r='1.5' fill='white' opacity='.4'/%3E%3Ccircle cx='560' cy='500' r='1' fill='white' opacity='.3'/%3E%3Ccircle cx='100' cy='560' r='1' fill='white' opacity='.4'/%3E%3Ccircle cx='480' cy='60' r='1' fill='white' opacity='.25'/%3E%3Ccircle cx='30' cy='250' r='1' fill='white' opacity='.3'/%3E%3Ccircle cx='340' cy='280' r='1' fill='white' opacity='.2'/%3E%3Ccircle cx='580' cy='380' r='1' fill='white' opacity='.35'/%3E%3Ccircle cx='200' cy='340' r='1' fill='white' opacity='.25'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 6%;
+      background: rgba(18,8,38,0.80);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--glass-border);
+      transition: padding 0.3s;
+    }
+    nav.scrolled { padding: 12px 6%; }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.9rem; color: var(--muted); font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--violet), var(--indigo));
+      color: var(--white) !important;
+      padding: 10px 22px; border-radius: 50px;
+      font-weight: 600 !important;
+      box-shadow: 0 0 20px rgba(124,58,237,0.4);
+      transition: box-shadow 0.3s, transform 0.2s !important;
+    }
+    .nav-cta:hover {
+      box-shadow: 0 0 30px rgba(124,58,237,0.7);
+      transform: translateY(-1px);
+      color: var(--white) !important;
+    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 6% 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      padding: 8px 18px; border-radius: 50px;
+      font-size: 0.85rem; color: var(--gold); font-weight: 500;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      animation: fadeDown 0.8s ease both;
+    }
+    .hero-badge span { font-size: 1.1rem; }
+    .hero-tagline {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      color: var(--purple);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      animation: fadeDown 0.9s ease both;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      animation: fadeDown 1s ease both;
+    }
+    .hero-title .workshop-name {
+      display: block;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.9;
+      margin-bottom: 0.4rem;
+    }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--rose) 50%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      max-width: 600px; margin: 0 auto 2.5rem;
+      animation: fadeDown 1.1s ease both;
+    }
+    .hero-sub strong { color: var(--white); }
+    .hero-pills {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+      margin-bottom: 3rem;
+      animation: fadeDown 1.2s ease both;
+    }
+    .pill {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      padding: 7px 16px; border-radius: 50px;
+      font-size: 0.85rem; color: var(--muted);
+      backdrop-filter: blur(8px);
+    }
+    .pill strong { color: var(--white); }
+    .hero-cta-group {
+      display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+      margin-bottom: 3.5rem;
+      animation: fadeDown 1.3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--violet), var(--indigo));
+      color: var(--white); font-weight: 600; font-size: 1rem;
+      padding: 16px 36px; border-radius: 50px; border: none; cursor: pointer;
+      box-shadow: 0 0 30px rgba(124,58,237,0.5), 0 4px 24px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 50px rgba(124,58,237,0.7), 0 8px 32px rgba(0,0,0,0.4);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--muted); font-weight: 500; font-size: 0.95rem;
+      padding: 16px 28px; border-radius: 50px;
+      border: 1px solid var(--glass-border);
+      cursor: pointer; transition: all 0.3s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-secondary:hover { border-color: var(--purple); color: var(--white); }
+    /* Countdown */
+    .countdown-wrap {
+      animation: fadeDown 1.4s ease both;
+    }
+    .countdown-label {
+      font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .countdown {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    }
+    .cd-unit {
+      display: flex; flex-direction: column; align-items: center;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius); padding: 18px 24px;
+      backdrop-filter: blur(10px); min-width: 80px;
+    }
+    .cd-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; line-height: 1;
+    }
+    .cd-lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 0.75rem; letter-spacing: 0.1em;
+      animation: bounce 2s infinite;
+    }
+    .scroll-hint svg { width: 20px; opacity: 0.5; }
+
+    /* ─── SECTION SHARED ─────────────────────────────────────────── */
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 6%; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 1.05rem; max-width: 580px;
+    }
+    .divider {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--violet), var(--rose));
+      border-radius: 2px; margin: 1.2rem 0;
+    }
+
+    /* ─── BENEFITS ───────────────────────────────────────────────── */
+    #benefits { background: transparent; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 3rem;
+    }
+    .benefit-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      backdrop-filter: blur(16px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at center, rgba(168,85,247,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(124,58,237,0.2);
+    }
+    .benefit-icon {
+      font-size: 2.4rem; margin-bottom: 1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(168,85,247,0.1));
+      border-radius: 14px; border: 1px solid rgba(168,85,247,0.2);
+    }
+    .benefit-card h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+    .benefit-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+    /* ─── WORKSHOP INFO STRIP ────────────────────────────────────── */
+    #info-strip {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(79,70,229,0.1));
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .info-strip-inner {
+      max-width: 1100px; margin: 0 auto; padding: 40px 6%;
+      display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
+    }
+    .info-item {
+      display: flex; align-items: center; gap: 14px; flex: 1; min-width: 180px;
+    }
+    .info-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--violet), var(--indigo));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+    }
+    .info-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .info-value { font-size: 1rem; font-weight: 600; color: var(--white); }
+
+    /* ─── TRAINER ────────────────────────────────────────────────── */
+    #trainer .section-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .trainer-img-wrap {
+      position: relative; display: flex; justify-content: center;
+    }
+    .trainer-img-wrap::before {
+      content: '';
+      position: absolute; inset: -16px;
+      background: conic-gradient(from 0deg, var(--violet), var(--rose), var(--gold), var(--violet));
+      border-radius: 50%;
+      animation: spin 8s linear infinite;
+      opacity: 0.5;
+      filter: blur(10px);
+    }
+    .trainer-img {
+      width: 340px; height: 340px; object-fit: cover; object-position: top;
+      border-radius: 50%;
+      border: 4px solid rgba(168,85,247,0.5);
+      position: relative; z-index: 1;
+      box-shadow: 0 0 60px rgba(124,58,237,0.35);
+    }
+    .trainer-img-placeholder {
+      width: 340px; height: 340px; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.2));
+      border: 4px solid rgba(168,85,247,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem; position: relative; z-index: 1;
+    }
+    .trainer-name {
+      font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 700;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 0.25rem;
+    }
+    .trainer-title {
+      font-size: 1rem; color: var(--purple); font-weight: 500; margin-bottom: 1.5rem;
+    }
+    .trainer-bio { color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .trainer-stats {
+      display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; line-height: 1;
+    }
+    .stat-lbl { font-size: 0.75rem; color: var(--muted); }
+    .trainer-insta {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--glass-border);
+      padding: 10px 20px; border-radius: 50px;
+      font-size: 0.9rem; color: var(--muted);
+      transition: all 0.3s;
+    }
+    .trainer-insta:hover { border-color: var(--rose); color: var(--white); }
+
+    /* ─── CURRICULUM ─────────────────────────────────────────────── */
+    #curriculum { background: rgba(30,15,60,0.35); }
+    .curriculum-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px; margin-top: 3rem;
+    }
+    .session-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 28px; backdrop-filter: blur(12px);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .session-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(124,58,237,0.2);
+    }
+    .session-num {
+      font-size: 0.75rem; letter-spacing: 0.15em;
+      color: var(--gold); font-weight: 600;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .session-title { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .session-duration {
+      font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .session-points { list-style: none; }
+    .session-points li {
+      font-size: 0.88rem; color: var(--muted); padding: 4px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .session-points li::before { content: '✦'; color: var(--purple); font-size: 0.7rem; margin-top: 4px; flex-shrink: 0; }
+    .bonus-card {
+      background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(232,121,249,0.08));
+      border: 1px solid rgba(232,121,249,0.3);
+    }
+    .bonus-badge {
+      display: inline-block; background: linear-gradient(135deg, var(--gold), var(--rose));
+      color: #07020f; font-size: 0.7rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 50px; margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── WHO IS THIS FOR ────────────────────────────────────────── */
+    #audience .audience-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px; margin-top: 3rem;
+    }
+    .audience-card {
+      background: var(--card-bg); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); padding: 28px;
+      backdrop-filter: blur(12px); text-align: center;
+      transition: transform 0.3s;
+    }
+    .audience-card:hover { transform: translateY(-4px); }
+    .audience-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .audience-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .audience-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* ─── TESTIMONIALS ───────────────────────────────────────────── */
+    #testimonials { background: rgba(30,15,60,0.35); }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 3rem;
+    }
+    .testi-card {
+      background: var(--card-bg); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); padding: 28px;
+      backdrop-filter: blur(12px); position: relative;
+    }
+    .testi-quote {
+      font-size: 3rem; color: var(--purple); line-height: 1;
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 0.5rem; opacity: 0.6;
+    }
+    .testi-text { color: var(--muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+    .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--violet), var(--rose));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 700; color: white;
+      font-family: 'Cormorant Garamond', serif; flex-shrink: 0;
+    }
+    .testi-name { font-weight: 600; font-size: 0.95rem; }
+    .testi-loc { font-size: 0.78rem; color: var(--muted); }
+
+    /* ─── FAQ ────────────────────────────────────────────────────── */
+    .faq-list { margin-top: 3rem; max-width: 760px; }
+    .faq-item {
+      background: var(--card-bg); border: 1px solid var(--glass-border);
+      border-radius: var(--radius); margin-bottom: 12px;
+      backdrop-filter: blur(12px); overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px; display: flex; justify-content: space-between;
+      align-items: center; cursor: pointer; gap: 16px;
+      font-weight: 500; font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--gold); }
+    .faq-arrow {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 1px solid var(--glass-border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--violet); border-color: var(--violet); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+      padding: 0 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────────── */
+    #final-cta {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(79,70,229,0.08));
+      border-top: 1px solid var(--glass-border);
+    }
+    #final-cta .section-inner { padding: 80px 6%; }
+    #final-cta .section-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem; }
+    #final-cta .section-sub { margin: 0 auto 2.5rem; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: rgba(18,8,38,0.92);
+      border-top: 1px solid var(--glass-border);
+      padding: 40px 6%; text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600;
+      background: linear-gradient(135deg, var(--gold), var(--rose));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .footer-links a { color: var(--muted); font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; }
+    .footer-copy a { color: var(--purple); }
+
+    /* ─── POPUP / OVERLAY ────────────────────────────────────────── */
+    .overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(7,2,15,0.85);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.35s;
+    }
+    .overlay.active { opacity: 1; pointer-events: all; }
+    .modal {
+      background: linear-gradient(145deg, #1e0f3c, #150a2e);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      width: 100%; max-width: 520px;
+      max-height: 90vh; overflow-y: auto;
+      padding: 40px 36px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 80px rgba(124,58,237,0.15);
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+      position: relative;
+    }
+    .overlay.active .modal { transform: translateY(0) scale(1); }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1.1rem; color: var(--muted);
+      transition: all 0.2s;
+    }
+    .modal-close:hover { background: rgba(168,85,247,0.2); color: var(--white); }
+    .modal-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, rgba(240,180,41,0.15), rgba(232,121,249,0.1));
+      border: 1px solid rgba(240,180,41,0.3);
+      padding: 6px 14px; border-radius: 50px;
+      font-size: 0.78rem; color: var(--gold); font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .modal h2 {
+      font-size: 2rem; margin-bottom: 0.4rem;
+    }
+    .modal-sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.8rem; line-height: 1.5; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-size: 0.82rem; color: var(--muted);
+      font-weight: 500; margin-bottom: 6px; letter-spacing: 0.03em;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px; padding: 13px 16px;
+      color: var(--white); font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input::placeholder { color: rgba(184,169,217,0.4); }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(168,85,247,0.12);
+    }
+    .form-group select option { background: #130828; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1.5rem; }
+    .form-check input[type="checkbox"] {
+      width: 18px; height: 18px; flex-shrink: 0; cursor: pointer;
+      accent-color: var(--violet); margin-top: 2px;
+    }
+    .form-check label { font-size: 0.82rem; color: var(--muted); cursor: pointer; }
+    .form-check a { color: var(--purple); }
+    .btn-submit {
+      width: 100%; padding: 15px;
+      background: linear-gradient(135deg, var(--violet), var(--indigo));
+      color: var(--white); font-weight: 600; font-size: 1rem;
+      border: none; border-radius: 50px; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 0 24px rgba(124,58,237,0.45);
+      transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .btn-submit:hover { box-shadow: 0 0 40px rgba(124,58,237,0.65); transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-note { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 12px; }
+    .form-success {
+      display: none; text-align: center; padding: 20px 0;
+    }
+    .form-success .success-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+    .form-success h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .form-success p { color: var(--muted); font-size: 0.92rem; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────────── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; gap: 1rem;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: rgba(18,8,38,0.97); padding: 24px 6%;
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .hamburger { display: flex; }
+      #trainer .section-inner { grid-template-columns: 1fr; text-align: center; }
+      .trainer-img-wrap { justify-content: center; }
+      .trainer-img, .trainer-img-placeholder { width: 260px; height: 260px; }
+      .trainer-stats { justify-content: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .modal { padding: 28px 22px; }
+      .cd-num { font-size: 2rem; }
+      .cd-unit { padding: 14px 16px; min-width: 66px; }
+    }
+    @media (max-width: 480px) {
+      .info-strip-inner { flex-direction: column; align-items: flex-start; }
+      .countdown { gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">✦ Coach Shivangi Kaur</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#benefits">What You'll Learn</a>
+      <a href="#trainer">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#testimonials">Stories</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="nav-cta" onclick="openModal(event)">Register Free →</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-badge"><span>🌿</span> Free Live Online Workshop — Limited Seats</div>
+    <p class="hero-tagline">July 5, 2025 · 7:00 PM IST · Online via Zoom</p>
+    <h1 class="hero-title">
+      <span class="workshop-name">The Tarot Awakening Workshop</span><br />
+      <span class="gradient-text">Awaken Your Tarot,<br />Energy &amp; Manifestation</span>
+    </h1>
+    <p class="hero-sub">
+      A transformational free workshop to help you <strong>heal trauma, unlock your intuition</strong>, and master the ancient art of Tarot — guided by India's leading Energy Practitioner.
+    </p>
+    <div class="hero-pills">
+      <div class="pill">🔮 <strong>Tarot Reading</strong></div>
+      <div class="pill">🌀 <strong>Energy Healing</strong></div>
+      <div class="pill">✨ <strong>Manifestation</strong></div>
+      <div class="pill">💜 <strong>Trauma Release</strong></div>
+      <div class="pill">🆓 <strong>100% Free</strong></div>
+    </div>
+    <div class="hero-cta-group">
+      <button class="btn-primary" onclick="openModal(event)">
+        🔮 Reserve My Free Seat
+      </button>
+      <button class="btn-secondary" onclick="document.getElementById('trainer').scrollIntoView({behavior:'smooth'})">
+        Meet Your Guide ↓
+      </button>
+    </div>
+    <div class="countdown-wrap">
+      <p class="countdown-label">Workshop begins in</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-lbl">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-lbl">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-lbl">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-lbl">Seconds</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M10 3v14M4 13l6 6 6-6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFITS ════════════════════════════════════════════════ -->
+  <section id="benefits">
+    <div class="section-inner">
+      <p class="section-tag reveal">What You'll Experience</p>
+      <h2 class="section-title reveal">Transform in One Day</h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Everything you need to begin your journey into Tarot, energy, and conscious manifestation — in a single powerful session.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🔮</div>
+          <h3>Read Tarot Confidently</h3>
+          <p>Learn to pull and interpret cards for yourself — no prior experience needed. Discover the language of symbols.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🌀</div>
+          <h3>Heal Your Energy Field</h3>
+          <p>Understand how trauma lives in your body and learn practical energy techniques to release what's been holding you back.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">✨</div>
+          <h3>Activate Manifestation</h3>
+          <p>Discover the direct link between your energy state and what you attract. Build a daily practice that actually works.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">🧘</div>
+          <h3>Unlock Your Intuition</h3>
+          <p>Learn to trust your inner voice again. Reconnect with your innate wisdom that modern life has muted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INFO STRIP ═══════════════════════════════════════════════ -->
+  <section id="info-strip">
+    <div class="info-strip-inner">
+      <div class="info-item reveal">
+        <div class="info-icon">📅</div>
+        <div>
+          <div class="info-label">Date</div>
+          <div class="info-value">Saturday, July 5, 2025</div>
+        </div>
+      </div>
+      <div class="info-item reveal">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Time</div>
+          <div class="info-value">7:00 PM – 8:30 PM IST</div>
+        </div>
+      </div>
+      <div class="info-item reveal">
+        <div class="info-icon">💻</div>
+        <div>
+          <div class="info-label">Format</div>
+          <div class="info-value">Live Online via Zoom</div>
+        </div>
+      </div>
+      <div class="info-item reveal">
+        <div class="info-icon">⏱</div>
+        <div>
+          <div class="info-label">Duration</div>
+          <div class="info-value">90 Minutes (with Q&amp;A)</div>
+        </div>
+      </div>
+      <div class="info-item reveal">
+        <div class="info-icon">🆓</div>
+        <div>
+          <div class="info-label">Investment</div>
+          <div class="info-value">Completely Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TRAINER ══════════════════════════════════════════════════ -->
+  <section id="trainer">
+    <div class="section-inner">
+      <div class="trainer-img-wrap reveal">
+        <!-- REPLACE src below with actual photo path once added to project -->
+        <img
+          src="trainer.jpg"
+          alt="Coach Shivangi Kaur — Energy Practitioner & Tarot Guide"
+          class="trainer-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="trainer-img-placeholder" style="display:none;">🌿</div>
+      </div>
+      <div class="reveal">
+        <p class="section-tag">Your Guide</p>
+        <h2 class="trainer-name">Coach Shivangi Kaur</h2>
+        <p class="trainer-title">Energy Practitioner · Trauma-Informed Facilitator · Tarot Master</p>
+        <div class="divider"></div>
+        <p class="trainer-bio">
+          Shivangi is a certified Energy Practitioner and Trauma-Informed Facilitator with over a decade of experience helping people reconnect with their inner power. She blends ancient Tarot wisdom with modern energy healing to create profound, lasting transformation.
+        </p>
+        <p class="trainer-bio">
+          Her work has touched hundreds of lives across India — guiding individuals to release deep-rooted trauma, reclaim their intuition, and co-create a life aligned with their highest self.
+        </p>
+        <div class="trainer-stats">
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-lbl">Lives Transformed</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">50+</div>
+            <div class="stat-lbl">Workshops Hosted</div>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/coachshivangii" target="_blank" class="trainer-insta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @coachshivangii
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CURRICULUM ═══════════════════════════════════════════════ -->
+  <section id="curriculum">
+    <div class="section-inner">
+      <p class="section-tag reveal">Workshop Agenda</p>
+      <h2 class="section-title reveal">What We'll Cover</h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">A structured 90-minute journey through Tarot, energy healing, and manifestation — designed for complete beginners and seasoned seekers alike.</p>
+      <div class="curriculum-grid">
+        <div class="session-card reveal">
+          <div class="session-num">Session 01</div>
+          <h3 class="session-title">Awakening Your Intuition</h3>
+          <p class="session-duration">⏱ 30 Minutes</p>
+          <ul class="session-points">
+            <li>What Tarot truly is (and what it isn't)</li>
+            <li>How to connect with your inner guidance system</li>
+            <li>Your first live card pull — guided exercise</li>
+          </ul>
+        </div>
+        <div class="session-card reveal">
+          <div class="session-num">Session 02</div>
+          <h3 class="session-title">Understanding Your Energy</h3>
+          <p class="session-duration">⏱ 30 Minutes</p>
+          <ul class="session-points">
+            <li>What energy healing actually means</li>
+            <li>How trauma stores itself in your body</li>
+            <li>Practical techniques to release energy blocks</li>
+          </ul>
+        </div>
+        <div class="session-card reveal">
+          <div class="session-num">Session 03</div>
+          <h3 class="session-title">Mastering the Major Arcana</h3>
+          <p class="session-duration">⏱ 45 Minutes</p>
+          <ul class="session-points">
+            <li>The 22 cards that mirror life's journey</li>
+            <li>Reading cards for yourself — live walkthrough</li>
+            <li>Live demonstration reading by Coach Shivangi Kaur</li>
+          </ul>
+        </div>
+        <div class="session-card reveal">
+          <div class="session-num">Session 04</div>
+          <h3 class="session-title">Manifestation Blueprint</h3>
+          <p class="session-duration">⏱ 30 Minutes</p>
+          <ul class="session-points">
+            <li>The energy–manifestation connection explained</li>
+            <li>How Tarot supports your deepest intentions</li>
+            <li>Build a simple daily practice starting today</li>
+          </ul>
+        </div>
+        <div class="session-card bonus-card reveal">
+          <div class="bonus-badge">BONUS</div>
+          <h3 class="session-title">Live Q&amp;A + Your Next Step</h3>
+          <p class="session-duration">⏱ 15 Minutes</p>
+          <ul class="session-points">
+            <li>Open Q&amp;A with Coach Shivangi Kaur</li>
+            <li>How to deepen your practice after today</li>
+            <li>Exclusive offer revealed for participants only</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ AUDIENCE ══════════════════════════════════════════════════ -->
+  <section id="audience">
+    <div class="section-inner">
+      <p class="section-tag reveal">Is This For You?</p>
+      <h2 class="section-title reveal">This Workshop Is For You If…</h2>
+      <div class="divider reveal"></div>
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <div class="audience-icon">🌱</div>
+          <h3>The Curious Beginner</h3>
+          <p>You've always been drawn to Tarot or energy work but never knew where to start safely and meaningfully.</p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-icon">💔</div>
+          <h3>The Healing Seeker</h3>
+          <p>You're carrying emotional weight — past trauma, anxiety, or feeling stuck — and you're ready to release it.</p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-icon">🌙</div>
+          <h3>The Spiritual Explorer</h3>
+          <p>You're already on a spiritual path and want to add powerful new tools for clarity, guidance, and self-trust.</p>
+        </div>
+        <div class="audience-card reveal">
+          <div class="audience-icon">🦋</div>
+          <h3>The Life Transformer</h3>
+          <p>You're done playing small. You're ready to manifest the life you deserve and align your energy with your dreams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ══════════════════════════════════════════════ -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <p class="section-tag reveal">Participant Stories</p>
+      <h2 class="section-title reveal">Lives Already Changed</h2>
+      <div class="divider reveal"></div>
+      <p class="section-sub reveal">Real words from real people who attended Coach Shivangi Kaur's sessions. <em>(Add your own DM testimonials here)</em></p>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I came in completely skeptical about Tarot and left with actual chills. Shivangi explained energy in a way that finally made sense to my analytical mind. I've been doing a daily card pull ever since.</p>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div>
+              <div class="testi-name">Priya M.</div>
+              <div class="testi-loc">Mumbai, Maharashtra</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The energy healing session was the most powerful thing I've experienced in years. I cried, I laughed, and I left feeling 10 pounds lighter. Coach Shivangi Kaur holds such a safe and sacred space.</p>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Ananya R.</div>
+              <div class="testi-loc">Bangalore, Karnataka</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I've attended many spiritual workshops but this one hit differently. The way she connects Tarot to manifestation and trauma is so unique. I enrolled in her paid program the same day.</p>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Sneha K.</div>
+              <div class="testi-loc">Delhi, India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ════════════════════════════════════════════════════════ -->
+  <section id="faq">
+    <div class="section-inner">
+      <p class="section-tag reveal">Got Questions?</p>
+      <h2 class="section-title reveal">Frequently Asked</h2>
+      <div class="divider reveal"></div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do I need any prior experience with Tarot or energy healing?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">Absolutely not. This workshop is designed to welcome complete beginners. All you need is an open mind and a willingness to explore. Coach Shivangi Kaur explains everything from first principles.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Is this workshop really free? What's the catch?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">Yes, completely free. There's no catch. At the end of the workshop, Coach Shivangi Kaur will share details about her deeper paid programs for those who want to go further — but that's entirely optional and there's zero pressure.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What do I need to attend the workshop?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">Just a stable internet connection, a device with Zoom installed, and a quiet comfortable space. A journal and pen are recommended. You do not need a Tarot deck for this workshop.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Will there be a recording if I can't attend live?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">We strongly recommend attending live for the full interactive experience and live readings. A replay may be made available briefly to registered participants — we'll notify you by email after the event.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Is Tarot related to religion or occult practices?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">Not at all. Tarot is a tool for self-reflection and intuition development. Coach Shivangi Kaur approaches it as a psychological and spiritual mirror — completely non-religious and accessible to people of all faiths and backgrounds.</div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How many people will be in the workshop?
+            <div class="faq-arrow">▾</div>
+          </div>
+          <div class="faq-a">Seats are intentionally limited to maintain the quality of the experience and ensure everyone gets personal attention during the live Q&A. We recommend registering early.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═════════════════════════════════════════════════ -->
+  <section id="final-cta">
+    <div class="section-inner">
+      <p class="section-tag reveal">Your Transformation Starts Here</p>
+      <h2 class="section-title reveal">Ready to Awaken?</h2>
+      <div class="divider reveal" style="margin: 1rem auto 1.5rem;"></div>
+      <p class="section-sub reveal">Join hundreds of seekers on Saturday, July 5. It's free. It's live. It might just change everything.</p>
+      <div style="margin-top: 2.5rem;" class="reveal">
+        <button class="btn-primary" onclick="openModal(event)" style="font-size:1.1rem; padding: 18px 48px;">
+          🔮 Reserve My Free Seat →
+        </button>
+      </div>
+      <p class="reveal" style="color: var(--muted); font-size: 0.8rem; margin-top: 1.2rem;">
+        ✓ No credit card &nbsp;·&nbsp; ✓ No spam &nbsp;·&nbsp; ✓ Cancel anytime
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-logo">✦ Coach Shivangi Kaur</div>
+    <div class="footer-links">
+      <a href="#benefits">What You'll Learn</a>
+      <a href="#trainer">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://www.instagram.com/coachshivangii" target="_blank">Instagram</a>
+    </div>
+    <p class="footer-copy">
+      © 2025 Coach Shivangi Kaur. All rights reserved. ·
+      Made with 💜 by KYCreatives for seekers everywhere.
+    </p>
+  </footer>
+
+  <!-- ═══ REGISTRATION POPUP ════════════════════════════════════════ -->
+  <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+
+      <!-- Form View -->
+      <div id="formView">
+        <div class="modal-badge">🔮 Free Workshop · July 5, 2025</div>
+        <h2>Reserve Your Seat</h2>
+        <p class="modal-sub">Fill in your details below and we'll send your Zoom link before the workshop.</p>
+
+        <form id="registrationForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Priya" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Sharma" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="priya@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp / Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Mumbai" />
+          </div>
+          <div class="form-group">
+            <label for="source">How did you hear about us?</label>
+            <select id="source" name="source">
+              <option value="">Select one…</option>
+              <option value="instagram">Instagram (@coachshivangii)</option>
+              <option value="friend">Friend / Family Referral</option>
+              <option value="whatsapp">WhatsApp Group</option>
+              <option value="youtube">YouTube</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">
+              I agree to receive the workshop Zoom link and occasional updates from Coach Shivangi Kaur via WhatsApp / Email.
+              <a href="#" onclick="return false;">Privacy Policy</a>
+            </label>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="submitText">✦ Confirm My Free Seat</span>
+          </button>
+          <p class="form-note">🔒 Your information is safe and will never be shared.</p>
+        </form>
+      </div>
+
+      <!-- Success View -->
+      <div class="form-success" id="successView">
+        <div class="success-icon">🎉</div>
+        <h3>You're In!</h3>
+        <p style="margin-bottom: 0.75rem;">
+          Welcome, <strong id="successName"></strong>! Your seat is reserved.
+        </p>
+        <p>
+          Check your email for confirmation. Your Zoom link will be sent <strong>24 hours before</strong> the workshop.
+        </p>
+        <div style="margin-top: 2rem; padding: 16px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 12px;">
+          <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem;">Share with a friend who needs this ✨</p>
+          <button class="btn-secondary" onclick="shareWorkshop()" style="width:100%; justify-content:center;">Share This Workshop</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ JAVASCRIPT ════════════════════════════════════════════════ -->
+  <script>
+    // ── CONFIG: paste your Google Apps Script URL here ──────────────
+    const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    // ────────────────────────────────────────────────────────────────
+
+    // Countdown timer
+    const workshopDate = new Date('2025-07-05T19:00:00+05:30');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = workshopDate - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p style="color:var(--gold);font-size:1.1rem;font-weight:600;">🔴 Workshop is Live Now!</p>';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+      document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+      document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // Modal
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('overlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('overlay')) closeModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // FAQ accordion
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Form submission → Google Sheets
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn  = document.getElementById('submitBtn');
+      const txt  = document.getElementById('submitText');
+
+      // Validate
+      const required = ['firstName','lastName','email','phone','consent'];
+      let valid = true;
+      required.forEach(id => {
+        const el = form[id];
+        if (el.type === 'checkbox' ? !el.checked : !el.value.trim()) {
+          el.style.borderColor = '#f87171';
+          el.style.boxShadow   = '0 0 0 3px rgba(248,113,113,0.15)';
+          valid = false;
+          setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 3000);
+        }
+      });
+      if (!valid) return;
+
+      // Email format
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value)) {
+        form.email.style.borderColor = '#f87171';
+        setTimeout(() => { form.email.style.borderColor = ''; }, 3000);
+        return;
+      }
+
+      btn.disabled = true;
+      txt.textContent = '✦ Reserving your seat…';
+
+      const payload = {
+        timestamp:  new Date().toISOString(),
+        firstName:  form.firstName.value.trim(),
+        lastName:   form.lastName.value.trim(),
+        email:      form.email.value.trim(),
+        phone:      form.phone.value.trim(),
+        city:       form.city.value.trim(),
+        source:     form.source.value,
+        workshop:   'Tarot Awakening Workshop — July 5, 2025'
+      };
+
+      try {
+        if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+          await fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode:   'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body:   JSON.stringify(payload)
+          });
+        }
+        // Show success
+        document.getElementById('successName').textContent = payload.firstName;
+        document.getElementById('formView').style.display    = 'none';
+        document.getElementById('successView').style.display = 'block';
+      } catch (err) {
+        btn.disabled = false;
+        txt.textContent = '✦ Confirm My Free Seat';
+        alert('Something went wrong. Please try again.');
+      }
+    }
+
+    // Share
+    function shareWorkshop() {
+      const text = '🔮 I just registered for a FREE Tarot, Energy & Manifestation workshop with Coach Shivangi Kaur! Join me on July 5 👇\n' + window.location.href;
+      if (navigator.share) {
+        navigator.share({ title: 'Tarot Awakening Workshop', text, url: window.location.href });
+      } else {
+        navigator.clipboard.writeText(text).then(() => alert('Link copied to clipboard!'));
+      }
+    }
+  </script>
+</body>
+</html>
